@@ -7,3 +7,24 @@
 body {
     box-sizing: border-box;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    aspect-ratio: 1/1;
+    background-color: gray;
+    border-color: black;
+    border-style: solid;
+    border: 2px;
+}
+
+.square {
+    aspect-ratio: 1/1;
+    background-color: gray;
+    border-color: black;
+    border-style: solid;
+    border: 2px;
+}
