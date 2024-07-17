@@ -8,23 +8,34 @@ body {
     box-sizing: border-box;
 }
 
+.page {
+    height: 100vh;
+    aspect-ratio: 1/1;
+    margin: auto;
+}
+
+#newGrid {
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
 .row {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.columnHover {
+    aspect-ratio: 1/1;
+    background-color: pink;
+    border: 2px solid black;
+    flex: auto; 
 }
 
 .column {
     aspect-ratio: 1/1;
     background-color: gray;
-    border-color: black;
-    border-style: solid;
-    border: 2px;
+    border: 2px solid black;
+    flex: 1 1 0;
 }
 
-.square {
-    aspect-ratio: 1/1;
-    background-color: gray;
-    border-color: black;
-    border-style: solid;
-    border: 2px;
-}

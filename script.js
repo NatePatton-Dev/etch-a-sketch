@@ -1,12 +1,11 @@
 const container = document.querySelector(".container");
 
-/*
 // create 16x16 grid of square divs
 let N = 16
 for (let i = 0; i < N; i++) {
     //create div row container
     let row = document.createElement("div");
-    row.classList.add(`row${i}`);
+    row.classList.add("row");
     container.appendChild(row);
     //16x loop to create 16 divs in row container
     for (let j = 0; j < N; j++) {
@@ -15,17 +14,31 @@ for (let i = 0; i < N; i++) {
         row.appendChild(column);
     };
 };
-*/
 
+let squares = document.querySelectorAll(".column");
 
-//create NxN grid of square divs
-let N = 16;
-let loopLimit = N*N;
-for (let i = 0; i < loopLimit; i++) {
-    let squareWidth = `${(100/N)}vw`;
-    console.log(squareWidth);
-    let square = document.createElement("div");
-    square.classList.add("square");
-    square.width = squareWidth
-    container.appendChild(square);
-};
+squares.forEach(function (square) {
+    function draw() {
+        square.classList.remove("column");
+        square.classList.add("columnHover");
+    }
+    square.addEventListener("mouseover", draw);
+});
+
+squares.forEach(function (square) {
+    function draw() {
+        square.classList.remove("columnHover");
+        square.classList.add("column");
+    }
+    square.addEventListener("mouseout", draw);
+});
+
+let newGrid = document.querySelector("#newGrid")
+newGrid.addEventListener("click", function() {
+    let gridNumber = prompt("Number of squares per side of new grid?")
+    //if more than 100 re-prompt
+
+});
+
+//adding button made total page height more than window height
+//flex shrink doesn't appear to be working
