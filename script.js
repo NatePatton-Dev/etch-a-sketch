@@ -24,8 +24,28 @@ function addDrawEventListener () {
     let squares = document.querySelectorAll(".column");
     squares.forEach(function (square) {
         function draw() {
-            square.classList.remove("column");
-            square.classList.add("columnHover");
+            function randomColor () {
+                let color = "";
+                for (let i = 0; i < 3; i++) {
+                    let num = Math.floor(Math.random()*256).toString();
+                    if (i < 2) {
+                        color += num + ",";
+                    } else {
+                        color += num;
+                    };
+                };
+                return "rgb(" + color + ")";
+            };
+            // increase opacity
+            let opacity = square.style.opacity;
+            console.log(+opacity);
+            if (+opacity < .05) {
+                square.style.backgroundColor = randomColor();
+                opacity = (+opacity + .1).toString();
+            } else if (+opacity < 1) {
+                opacity = (+opacity + .1).toString();
+            };
+            console.log(+opacity);
         };
         square.addEventListener("mouseover", draw);
     });
@@ -33,20 +53,11 @@ function addDrawEventListener () {
 
 addDrawEventListener();
 
-// squares.forEach(function (square) {
-//     function draw() {
-//         square.classList.remove("columnHover");
-//         square.classList.add("column");
-//     }
-//     square.addEventListener("mouseout", draw);
-// });
-
 let newGrid = document.querySelector("#newGrid");
 
 newGrid.addEventListener("click", function() {
     function getGridNumber () {
         gridNumber = +prompt("Number of squares per side of new grid?");
-        //if more than 100 re-prompt
         if (gridNumber > 100) {
             getGridNumber();
         } else if (!gridNumber) {
@@ -64,4 +75,8 @@ newGrid.addEventListener("click", function() {
     addDrawEventListener();
 });
 
-// how to fit grid and button to window size?
+//increase opacity not working yet
+
+//how to make grid flex as window size shrinks horizontally
+
+//why did if `(gridNumber>100 || !gridNumber)` not work, but splitting them did?

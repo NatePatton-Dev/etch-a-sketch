@@ -8,15 +8,21 @@ body {
     box-sizing: border-box;
 }
 
-/* .page {
-    height: 100vh;
+.page {
+    height: 95vh;
     aspect-ratio: 1/1;
     margin: auto;
-} */
+}
+
+.buttonContainer {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #newGrid {
-    display: block;
-    margin: 10px auto 10px auto;
+    flex: 0 0 auto;
 }
 
 .row {
@@ -25,17 +31,8 @@ body {
     flex-wrap: nowrap;
 }
 
-.columnHover {
-    aspect-ratio: 1/1;
-    background-color: pink;
-    border: 2px solid black;
-    flex: auto; 
-}
-
 .column {
     aspect-ratio: 1/1;
-    background-color: gray;
     border: 2px solid black;
     flex: 1 1 0;
 }
-
