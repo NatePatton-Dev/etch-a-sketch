@@ -8,11 +8,11 @@ body {
     box-sizing: border-box;
 }
 
-.page {
+/* .page {
     height: 100vh;
     aspect-ratio: 1/1;
     margin: auto;
-}
+} */
 
 #newGrid {
     display: block;
