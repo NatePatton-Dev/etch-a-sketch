@@ -8,9 +8,15 @@ function createGrid () {
         row.classList.add("row");
         container.appendChild(row);
         for (let j = 0; j < gridNumber; j++) {
-            let column = document.createElement("div");
-            column.classList.add("column");
-            row.appendChild(column);
+            let gridSquare = document.createElement("div");
+            gridSquare.classList.add("gridSquare");
+            if (i === 0) {
+                gridSquare.classList.add("topRow");
+            };
+            if (j === 0) {
+                gridSquare.classList.add("leftColumn");
+            };
+            row.appendChild(gridSquare);
         };
     };
 };
@@ -18,7 +24,7 @@ function createGrid () {
 createGrid();
 
 function addDrawEventListener () {
-    let squares = document.querySelectorAll(".column");
+    let squares = document.querySelectorAll(".gridSquare");
     squares.forEach(function (square) {
         function draw() {
             function randomColor () {
