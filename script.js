@@ -67,5 +67,3 @@ newGrid.addEventListener("click", function() {
     createGrid();
     addDrawEventListener();
 });
-
-//how to make grid flex as window size shrinks horizontally

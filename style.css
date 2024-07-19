@@ -9,9 +9,14 @@ body {
 }
 
 .page {
-    height: 95vh;
-    aspect-ratio: 1/1;
+    max-height: 100vh;
     margin: auto;
+}
+
+.container {
+    max-height: 95vh;
+    margin: auto;
+    aspect-ratio: 1/1;
 }
 
 .buttonContainer {
